@@ -1,0 +1,32 @@
+﻿Merge branch 'Alex' into Tristan
+
+Conflicts:
+	Anarchy/Anarchy-csharp.sln
+	Anarchy/Anarchy.sln
+	Anarchy/Assembly-CSharp-vs.csproj
+	Anarchy/Assembly-CSharp.csproj
+	Anarchy/Assets/Scripts.meta
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Tristan
+# Your branch is up-to-date with 'origin/Tristan'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   Anarchy/Anarchy-csharp.sln
+#	modified:   Anarchy/Anarchy.sln
+#	modified:   Anarchy/Assembly-CSharp-vs.csproj
+#	modified:   Anarchy/Assembly-CSharp.csproj
+#	modified:   Anarchy/Assets/Scripts.meta
+#	new file:   Anarchy/Assets/Scripts/MobController.cs
+#	new file:   Anarchy/Assets/Scripts/MobController.cs.meta
+#
+
