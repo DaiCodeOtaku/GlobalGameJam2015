@@ -2,18 +2,23 @@
 using System.Collections;
 
 public class Speach : MonoBehaviour {
-	public float ExistTime; 
 
+	public Texture[] Tex;
+	int TexPos;
+	public float ExistTime; 
 	float Time1;
 	float Time2;
-	// Use this for initialization
+
+
 	void Start () {
+
+		TextureSet(TexPos);
 		Time1 = Time.time;
 		Time2 = Time.time + ExistTime;
 
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		Time1 = Time.time;
 
@@ -22,4 +27,12 @@ public class Speach : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+
+	void TextureSet(int Pos)
+	{
+		renderer.material.mainTexture = Tex[Pos];
+	}
+
+
+
 }
