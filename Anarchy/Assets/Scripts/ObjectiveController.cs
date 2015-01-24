@@ -30,6 +30,7 @@ public class ObjectiveController : MonoBehaviour {
 
 	public float yayTime = 5;
 	public GameObject speech;
+	public Objective Objective;
 
 
 	// Use this for initialization
@@ -51,6 +52,12 @@ public class ObjectiveController : MonoBehaviour {
 			switch (objectives.missions)
 			{
 			case mission.bakery:
+				//Make crowd say "WE RAID THE BAKERY!"
+				speech = new GameObject("speechBakery");
+				speech.AddComponent("TexPos");
+
+				Objective newObjective = (Objective)GameObject.Instantiate(Objective);
+				newObjective.tag = "Objective";
 
 				break;
 			case mission.fences:
@@ -94,6 +101,13 @@ public class ObjectiveController : MonoBehaviour {
 				break;
 			default:
 				break;
+			}
+		}
+
+		if (objectives.states == state.inProgress) {
+			//detect if objective is completed, then update the state
+			if(GameObject.FindGameObjectsWithTag("Objective") == null){
+				objectives.states = state.completed;
 			}
 		}
 		
