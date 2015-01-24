@@ -26,7 +26,7 @@ public class AdvAIController : MonoBehaviour {
 		RaycastHit hit;
 		this.transform.LookAt(mob.transform.position);
 		//Debug.DrawRay(this.transform.position, mobVector);
-		if(Mathf.Abs(Vector3.Magnitude(mob.transform.position - this.transform.position)) <= 20){
+		if(Mathf.Abs(Vector3.Magnitude(mob.transform.position - this.transform.position)) <= 10){
 			if (Physics.Raycast(this.transform.position, mobVector, out hit, Mathf.Infinity)){
 				if(hit.collider == mob.collider){
 					mobVector = mobVector.normalized;

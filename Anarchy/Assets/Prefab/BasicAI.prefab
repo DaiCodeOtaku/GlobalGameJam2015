@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2363892}
   - 54: {fileID: 5463892}
   - 114: {fileID: 11463890}
-  - 114: {fileID: 11463892}
+  - 114: {fileID: 11468276}
   m_Layer: 0
   m_Name: BasicAI
   m_TagString: Untagged
@@ -86,8 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca44e588cd465a84e90c8d7ccfd6523d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
---- !u!114 &11463892
+  health: 5
+--- !u!114 &11468276
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -95,13 +95,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 163892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e57b3fa034989f48af19cb9e52a3fe2, type: 3}
+  m_Script: {fileID: 11500000, guid: 60ca4f554b029b64bb88487400df4807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 11458594, guid: 2351ad06897b0904d8bea67c6f541da9, type: 2}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  fireDelay: 3
+  velocity: 50
 --- !u!136 &13663892
 CapsuleCollider:
   m_ObjectHideFlags: 1
