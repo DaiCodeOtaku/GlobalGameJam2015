@@ -2,7 +2,7 @@
 using System.Collections;
 
 public enum state {needed, completed, inProgress};
-public enum mission {bakery, fences, flowers, pee, fountain, sheep, mowing, pigeons, knock, shout, traffic, graffiti, wigs, pub};
+public enum mission {bakery, fences, flowers, pee, fountain, sheep, mowing, pigeons, knock, shout, traffic, graffiti, wigs, pub, test};
 
 
 
@@ -29,13 +29,15 @@ public class objective
 public class ObjectiveController : MonoBehaviour {
 
 	public float yayTime = 5;
-	public GameObject speech;
-	public Objective Objective;
-
+	public Speech speechCreator;
+	public Objective Objectives;
+	public Objective objectiveCreator;
 
 	// Use this for initialization
 	void Start () {
 		objective objectives = new objective();
+
+
 
 		if (objectives.states == state.needed) {
 			objectives.getObjective(objectives.missions);
@@ -49,15 +51,14 @@ public class ObjectiveController : MonoBehaviour {
 		
 		if (objectives.states == state.needed) {
 			objectives.getObjective(objectives.missions);
+			Speech newSpeech = (Speech)GameObject.Instantiate(speechCreator);
+			Objective newObjective = (Objective)GameObject.Instantiate (Objectives);
+			newSpeech.tag = "Speech";
+			newObjective.tag = "Objective";
 			switch (objectives.missions)
 			{
 			case mission.bakery:
 				//Make crowd say "WE RAID THE BAKERY!"
-				speech = new GameObject("speechBakery");
-				speech.AddComponent("TexPos");
-
-				Objective newObjective = (Objective)GameObject.Instantiate(Objective);
-				newObjective.tag = "Objective";
 
 				break;
 			case mission.fences:
@@ -98,6 +99,9 @@ public class ObjectiveController : MonoBehaviour {
 				break;
 			case mission.wigs:
 
+				break;
+			case mission.test:
+				newObjective.transform.parent = transform;
 				break;
 			default:
 				break;
