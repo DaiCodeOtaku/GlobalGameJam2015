@@ -8,7 +8,11 @@ public class MobController : MonoBehaviour {
 	public MobMember member;
 	// Use this for initialization
 	void Start () {
-		
+		for(int i = 0; i < 20; i++)
+		{
+			MobMember mem = (MobMember)GameObject.Instantiate(member);
+			mem.transform.parent = transform;
+		}
 	}
 	
 	// Update is called once per frame
@@ -38,11 +42,11 @@ public class MobController : MonoBehaviour {
 				members[i].transform.position = new Vector3(Random.Range(-radius,radius),0,Random.Range(-radius,radius))/2.0f + transform.position;
 			}
 		}
-		if(Input.GetKeyDown("space"))
+		/*if(Input.GetKeyDown("space"))
 		{
 
 			MobMember mem = (MobMember)GameObject.Instantiate(member);
 			mem.transform.parent = transform;
-		}
+		}*/
 	}
 }
