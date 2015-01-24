@@ -13,7 +13,7 @@ public class objective
 	public mission missions;
 	public mission lastMission;
 
-	public void getObjective (mission missions)
+	public mission getObjective ()
 	{
 		mission lastMission = missions;
 		missions = (mission)Random.Range (1, 14);
@@ -21,6 +21,7 @@ public class objective
 		while (missions == lastMission){
 			missions = (mission)Random.Range (1, 14);
 		}
+		return missions;
 	}
 
 }
@@ -30,100 +31,143 @@ public class ObjectiveController : MonoBehaviour {
 
 	public float yayTime = 5;
 	public Speech speechCreator;
-	public Objective Objectives;
+	public objective Objectives;
 	public Objective objectiveCreator;
 
 	// Use this for initialization
 	void Start () {
-		objective objectives = new objective();
-
-
-
-		if (objectives.states == state.needed) {
-			objectives.getObjective(objectives.missions);
-		}
+		Objectives = new objective();
+		Objectives.states = state.needed;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		objective objectives = new objective();
 
-		
-		if (objectives.states == state.needed) {
-			objectives.getObjective(objectives.missions);
-			Speech newSpeech = (Speech)GameObject.Instantiate(speechCreator);
-			Objective newObjective = (Objective)GameObject.Instantiate (Objectives);
-			newSpeech.tag = "Speech";
-			newObjective.tag = "Objective";
-			switch (objectives.missions)
-			{
-			case mission.bakery:
-				//Make crowd say "WE RAID THE BAKERY!"
+		Debug.Log (yayTime);
 
-				break;
-			case mission.fences:
-
-				break;
-			case mission.flowers:
-
-				break;
-			case mission.fountain:
-
-				break;
-			case mission.graffiti:
-
-				break;
-			case mission.knock:
-
-				break;
-			case mission.mowing:
-
-				break;
-			case mission.pee:
-
-				break;
-			case mission.pigeons:
-
-				break;
-			case mission.pub:
-
-				break;
-			case mission.sheep:
-
-				break;
-			case mission.shout:
-
-				break;
-			case mission.traffic:
-
-				break;
-			case mission.wigs:
-
-				break;
-			case mission.test:
-				newObjective.transform.parent = transform;
-				break;
-			default:
-				break;
-			}
-		}
-
-		if (objectives.states == state.inProgress) {
-			//detect if objective is completed, then update the state
-			if(GameObject.FindGameObjectsWithTag("Objective") == null){
-				objectives.states = state.completed;
-			}
-		}
-		
-		if (objectives.states == state.completed) {
+		Speech newSpeech;
+		Objective newObjective;
+		switch (Objectives.states) {
+		case state.completed:
 			//Make crowd go "yay"
+			Debug.Log ("Completed");
 			yayTime -= Time.deltaTime;
 			if (yayTime <= 0){
 				// Make crowd say "So what do we do now?"
-				objectives.states = state.needed;
-
+				Objectives.states = state.needed;
+				yayTime = 5;
 			}
+			break;
+		case state.needed:
+				if(GameObject.FindWithTag("Objective") == null){
+				Debug.Log("Objective Needed");
+				newSpeech = (Speech)GameObject.Instantiate(speechCreator);
+				newObjective = (Objective)GameObject.Instantiate (objectiveCreator);
+				newSpeech.tag = "Speech";
+				newObjective.tag = "Objective";
+				
+				Objectives.missions = Objectives.getObjective();
+				//Objectives.missions = mission.test;
+				switch (Objectives.missions)
+				{
+				case mission.bakery:
+					//Make crowd say "WE RAID THE BAKERY!"
+					newObjective.name = "bakeryObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "bakeryObjective";
+					break;
+				case mission.fences:
+					newObjective.name = "fencesObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "fencesObjective";
+					break;
+				case mission.flowers:
+					newObjective.name = "flowersObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "flowersObjective";
+					break;
+				case mission.fountain:
+					newObjective.name = "fountainObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "fountainObjective";
+					break;
+				case mission.graffiti:
+					newObjective.name = "graffitiObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "graffitiObjective";
+					break;
+				case mission.knock:
+					newObjective.name = "knockObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "knockObjective";
+					break;
+				case mission.mowing:
+					newObjective.name = "mowingObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "mowingObjective";
+					break;
+				case mission.pee:
+					newObjective.name = "peeObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "peeObjective";
+					break;
+				case mission.pigeons:
+					newObjective.name = "pigeonObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "pigeonObjective";
+					break;
+				case mission.pub:
+					newObjective.name = "pubObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "pubObjective";
+					break;
+				case mission.sheep:
+					newObjective.name = "sheepObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "sheepObjective";
+					break;
+				case mission.shout:
+					newObjective.name = "shoutObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "shoutObjective";
+					break;
+				case mission.traffic:
+					newObjective.name = "trafficObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "trafficObjective";
+					break;
+				case mission.wigs:
+					newObjective.name = "wigsObjective";
+					newObjective.transform.parent = transform;
+					newObjective.name = "wigsObjective";
+					break;
+				case mission.test:
+					newObjective.transform.parent = transform;
+					newObjective.name = "testObjective";
+					//newObjective.transform.position = 
+					break;
+				default:
+					break;
+					
+				}
+				Objectives.states = state.inProgress;
+			}
+				
+				break;
+		case state.inProgress:
+			Debug.Log ("In Progress");
+			if(GameObject.FindObjectOfType<Objective>() == null){
+				Debug.Log("DEFINITELY COMPLETED");
+				Objectives.states = state.completed;
+				
+			}
+			break;
+		default:
+			break;
+
 		}
+		
+
 
 	}
 }
