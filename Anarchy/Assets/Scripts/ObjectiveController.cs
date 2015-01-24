@@ -51,19 +51,34 @@ public class ObjectiveController : MonoBehaviour {
 		Objective newObjective;
 		switch (Objectives.states) {
 		case state.completed:
+			yayTime -= Time.deltaTime;
+			//Make crowd go "yay"
+			if(GameObject.FindWithTag("Speech") == null){
 			newSpeech = (Speech)GameObject.Instantiate(speechCreator);
 			newSpeech.transform.parent = mob.transform;
-			//Make crowd go "yay"
-			yayTime -= Time.deltaTime;
+				newSpeech.transform.LookAt(Camera.main.gameObject.transform.position);
+				newSpeech.transform.Rotate(transform.right, 90);
+				newSpeech.transform.Translate(-2,2,-3);
+			newSpeech.TexPos = 0;
+			newSpeech.ExistTime = 3;
+			}
+
+
 			if (yayTime <= 0){
-				
-				newSpeech = (Speech)GameObject.Instantiate(speechCreator);
-				newSpeech.transform.parent = mob.transform;
-				newSpeech.TexPos = 0;
-				newSpeech.ExistTime = 3;
+				if (GameObject.FindWithTag("Speech") == null){
+					Debug.Log("WDWDN?");
+					newSpeech = (Speech)GameObject.Instantiate(speechCreator);
+					newSpeech.transform.parent = mob.transform;
+					newSpeech.transform.LookAt(Camera.main.gameObject.transform.position);
+					newSpeech.transform.Rotate(transform.right, 90);
+					newSpeech.transform.Translate(-2,2,-3);
+					newSpeech.TexPos = 1;
+					newSpeech.ExistTime = 3;
+				}
 				// Make crowd say "So what do we do now?"
-				Objectives.states = state.needed;
 				yayTime = 3;
+				Objectives.states = state.needed;
+
 			}
 			break;
 		case state.needed:
@@ -74,6 +89,7 @@ public class ObjectiveController : MonoBehaviour {
 				newObjective.tag = "Objective";
 				
 				Objectives.missions = Objectives.getObjective();
+				Debug.Log("New mission created");
 				//Objectives.missions = mission.test;
 				switch (Objectives.missions)
 				{

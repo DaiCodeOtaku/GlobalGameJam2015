@@ -9,6 +9,7 @@ public class Speech : MonoBehaviour {
 	public float ExistTime; 
 	float Time1;
 	float Time2;
+	Vector2 texCoords;
 	
 	
 	void Start () {
@@ -35,9 +36,6 @@ public class Speech : MonoBehaviour {
 	void TextureSet(int Pos)
 	{
 		renderer.material.SetTexture(0, Tex[Pos]);
-		Debug.Log (Tex.ToString());
-		Debug.Log (Pos);
-		Debug.Log (TexPos);
 
 	}
 }
