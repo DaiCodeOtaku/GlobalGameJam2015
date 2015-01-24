@@ -4,7 +4,7 @@ using System.Collections;
 public class Speech : MonoBehaviour {
 	
 	public Texture[] Tex;
-	int TexPos;
+	public int TexPos;
 	public float ExistTime; 
 	float Time1;
 	float Time2;
@@ -21,7 +21,9 @@ public class Speech : MonoBehaviour {
 	
 	void Update () {
 		Time1 = Time.time;
-		
+
+
+
 		if(Time1 >= Time2)
 		{
 			Destroy(gameObject);

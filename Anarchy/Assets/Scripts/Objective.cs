@@ -35,7 +35,7 @@ public class Objective : MonoBehaviour {
 				Debug.Log("DESTROYED");
 			}
 			break;
-		case "flowerObjective":
+		case "flowersObjective":
 			if (distance <= 2.0)
 			{
 				Destroy(this.gameObject);

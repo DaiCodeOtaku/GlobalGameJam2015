@@ -29,19 +29,22 @@ public class objective
 
 public class ObjectiveController : MonoBehaviour {
 
-	public float yayTime = 5;
+	public float yayTime = 3;
 	public Speech speechCreator;
 	public objective Objectives;
 	public Objective objectiveCreator;
+	public MobController mob;
 
 	// Use this for initialization
 	void Start () {
 		Objectives = new objective();
 		Objectives.states = state.needed;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		mob = (MobController)GameObject.FindObjectOfType<MobController> ();
 
 		Debug.Log (yayTime);
 
@@ -49,13 +52,20 @@ public class ObjectiveController : MonoBehaviour {
 		Objective newObjective;
 		switch (Objectives.states) {
 		case state.completed:
+			newSpeech = (Speech)GameObject.Instantiate(speechCreator);
+			newSpeech.transform.parent = mob.transform;
 			//Make crowd go "yay"
 			Debug.Log ("Completed");
 			yayTime -= Time.deltaTime;
 			if (yayTime <= 0){
+				
+				newSpeech = (Speech)GameObject.Instantiate(speechCreator);
+				newSpeech.transform.parent = mob.transform;
+				newSpeech.TexPos = 1;
+				newSpeech.ExistTime = 3;
 				// Make crowd say "So what do we do now?"
 				Objectives.states = state.needed;
-				yayTime = 5;
+				yayTime = 3;
 			}
 			break;
 		case state.needed:
