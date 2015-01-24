@@ -5,6 +5,7 @@ public class ProjectileConrtoller : MonoBehaviour {
 
 	public Vector3 Direction;
 	public GameObject owner;
+	private float timeToLive = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,12 @@ public class ProjectileConrtoller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		timeToLive -= Time.deltaTime;
+		if(timeToLive < 0.0f)
+		{
+			Destroy(gameObject);
+
+		}
 		//this.transform.Translate(Direction * Time.deltaTime);
 	}
 

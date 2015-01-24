@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-		direction.Normalize();
+		direction += new Vector3(Input.GetAxis("FireX"), 0.0f, Input.GetAxis("FireY"));
 		direction *= 2;
 		offset = Vector3.Lerp(offset, direction, Time.deltaTime);
 		transform.position = offset + start + transform.parent.position;
