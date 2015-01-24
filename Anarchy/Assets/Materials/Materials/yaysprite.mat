@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: textBubble
+  m_Name: yaysprite
   m_Shader: {fileID: 51, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -24,7 +24,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .357142866
+        second: .5
     m_Colors:
       data:
         first:
