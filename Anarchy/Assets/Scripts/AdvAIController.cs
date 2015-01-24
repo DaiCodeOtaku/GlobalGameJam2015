@@ -8,6 +8,7 @@ public class AdvAIController : MonoBehaviour {
 	public float velocity = 50.0f;
 	public int burst = 3;
 	public float burstDelay = 0.1f;
+	int iterations = 17;
 
 	float delay;
 	int burstAmount;
@@ -26,7 +27,7 @@ public class AdvAIController : MonoBehaviour {
 		RaycastHit hit;
 		this.transform.LookAt(mob.transform.position);
 		//Debug.DrawRay(this.transform.position, mobVector);
-		if(Mathf.Abs(Vector3.Magnitude(mob.transform.position - this.transform.position)) <= 20){
+		if(Mathf.Abs(Vector3.Magnitude(mob.transform.position - this.transform.position)) <= 10){
 			if (Physics.Raycast(this.transform.position, mobVector, out hit, Mathf.Infinity)){
 				if(hit.collider == mob.collider){
 					mobVector = mobVector.normalized;
@@ -45,61 +46,56 @@ public class AdvAIController : MonoBehaviour {
 						}
 					}
 				} else {
-					AdvancedPathfinding(hit, mobVector, mobVector);
+					AdvancedPathfinding(hit, mobVector, mobVector, 0);
 				}
 			}
 		}
 		fireDelay -= Time.deltaTime;
 	}
 
-	void AdvancedPathfinding(RaycastHit originalHit, Vector3 mobVectorL, Vector3 mobVectorR){
-		RaycastHit hit;
-		Vector3 mobRotLeft = Quaternion.AngleAxis(-10, Vector3.up) * mobVectorL;
-		Vector3 mobRotRight = Quaternion.AngleAxis(10, Vector3.up) * mobVectorR;
-		//Debug.DrawRay(this.transform.position, mobRotRight, Color.red);
-		//Debug.DrawRay(this.transform.position, mobRotLeft, Color.blue);
-		bool moreLeft = false;
-		bool moreRight = false;
+	void AdvancedPathfinding(RaycastHit originalHit, Vector3 mobVectorL, Vector3 mobVectorR, int its){
+		if(its <= iterations){
 
-		if(Physics.Raycast(this.transform.position, mobRotLeft, out hit, Mathf.Infinity)){
-			if(hit.collider != originalHit.collider){
+			RaycastHit hit;
+			Vector3 mobRotLeft = Quaternion.AngleAxis(-10, Vector3.up) * mobVectorL;
+			Vector3 mobRotRight = Quaternion.AngleAxis(10, Vector3.up) * mobVectorR;
+			bool moreLeft = false;
+			bool moreRight = false;
+
+			if(Physics.Raycast(this.transform.position, mobRotLeft, out hit, Mathf.Infinity)){
+				if(hit.collider != originalHit.collider){
+					mobRotLeft = mobRotLeft.normalized;
+					rigidbody.velocity = mobRotLeft;
+					//Debug.Log("New Collider Left");
+				} else {
+					moreLeft = true;
+				}
+			} else {
+
 				mobRotLeft = mobRotLeft.normalized;
-				rigidbody.velocity = mobRotLeft;
-				//Debug.Log("New Collider Left");
-			} else {
-				moreLeft = true;
+				rigidbody.velocity = mobRotLeft - this.transform.right;
+				//Debug.Log("No Hit Left");
 			}
-		} else {
 
-			mobRotLeft = mobRotLeft.normalized;
-			rigidbody.velocity = mobRotLeft - this.transform.right;
-			//Debug.Log("No Hit Left");
-		}
-
-		if(Physics.Raycast(this.transform.position, mobRotRight, out hit, Mathf.Infinity)){
-			if(hit.collider != originalHit.collider){
+			if(Physics.Raycast(this.transform.position, mobRotRight, out hit, Mathf.Infinity)){
+				if(hit.collider != originalHit.collider){
+					mobRotLeft = mobRotRight.normalized;
+					rigidbody.velocity = mobRotRight;
+					//Debug.Log("new Cllider Right");
+				} else {
+					moreRight = true;
+				}
+			} else {
 				mobRotLeft = mobRotRight.normalized;
-				rigidbody.velocity = mobRotRight;
-				//Debug.Log("new Cllider Right");
-			} else {
-				moreRight = true;
+				rigidbody.velocity = mobRotRight + this.transform.right;
+				//Debug.Log("No Hit Right");
 			}
-		} else {
-			mobRotLeft = mobRotRight.normalized;
-			rigidbody.velocity = mobRotRight + this.transform.right;
-			//Debug.Log("No Hit Right");
+
+			if(moreLeft && moreRight){
+
+				AdvancedPathfinding(originalHit, mobRotLeft, mobRotRight, its++);
+			}
 		}
-
-
-		if(moreLeft && moreRight){
-
-			AdvancedPathfinding(originalHit, mobRotLeft, mobRotRight);
-		}
-
-		/*if(Vector3.Magnitude(originalHit.collider.transform.position - this.collider.transform.position) <= 5){
-			rigidbody.velocity = 1 * this.transform.forward;
-			Debug.Log(Vector3.Magnitude(originalHit.collider.transform.position - this.collider.transform.position));
-		}*/
 	}
 }
 
