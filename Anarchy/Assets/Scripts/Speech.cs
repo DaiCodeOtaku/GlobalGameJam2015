@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Speech : MonoBehaviour {
-	
+
 	public Texture[] Tex;
 	public int TexPos;
 	public float ExistTime; 
@@ -15,6 +16,7 @@ public class Speech : MonoBehaviour {
 		TextureSet(TexPos);
 		Time1 = Time.time;
 		Time2 = Time.time + ExistTime;
+
 		
 	}
 	
@@ -32,7 +34,11 @@ public class Speech : MonoBehaviour {
 	
 	void TextureSet(int Pos)
 	{
-		renderer.material.mainTexture = Tex[Pos];
+		renderer.material.SetTexture(0, Tex[Pos]);
+		Debug.Log (Tex.ToString());
+		Debug.Log (Pos);
+		Debug.Log (TexPos);
+
 	}
 }
 	

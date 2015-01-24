@@ -46,7 +46,6 @@ public class ObjectiveController : MonoBehaviour {
 	void Update () {
 		mob = (MobController)GameObject.FindObjectOfType<MobController> ();
 
-		Debug.Log (yayTime);
 
 		Speech newSpeech;
 		Objective newObjective;
@@ -55,13 +54,12 @@ public class ObjectiveController : MonoBehaviour {
 			newSpeech = (Speech)GameObject.Instantiate(speechCreator);
 			newSpeech.transform.parent = mob.transform;
 			//Make crowd go "yay"
-			Debug.Log ("Completed");
 			yayTime -= Time.deltaTime;
 			if (yayTime <= 0){
 				
 				newSpeech = (Speech)GameObject.Instantiate(speechCreator);
 				newSpeech.transform.parent = mob.transform;
-				newSpeech.TexPos = 1;
+				newSpeech.TexPos = 0;
 				newSpeech.ExistTime = 3;
 				// Make crowd say "So what do we do now?"
 				Objectives.states = state.needed;
@@ -70,7 +68,6 @@ public class ObjectiveController : MonoBehaviour {
 			break;
 		case state.needed:
 				if(GameObject.FindWithTag("Objective") == null){
-				Debug.Log("Objective Needed");
 				newSpeech = (Speech)GameObject.Instantiate(speechCreator);
 				newObjective = (Objective)GameObject.Instantiate (objectiveCreator);
 				newSpeech.tag = "Speech";
@@ -165,9 +162,7 @@ public class ObjectiveController : MonoBehaviour {
 				
 				break;
 		case state.inProgress:
-			Debug.Log ("In Progress");
 			if(GameObject.FindObjectOfType<Objective>() == null){
-				Debug.Log("DEFINITELY COMPLETED");
 				Objectives.states = state.completed;
 				
 			}
