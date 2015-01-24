@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 
-	public float health;
+	public float health = 2;
 
 	// Use this for initialization
 	void Start () {
-		health = 2;
+
 	}
 	
 	// Update is called once per frame
