@@ -1,0 +1,55 @@
+﻿Merge branch 'master' into Oliver
+
+Conflicts:
+	Anarchy/Anarchy-csharp.sln
+	Anarchy/Anarchy.sln
+	Anarchy/Assembly-CSharp-vs.csproj
+	Anarchy/Assembly-CSharp.csproj
+	Anarchy/Assets/Anarchy.unity
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Oliver
+# Your branch is up-to-date with 'origin/Oliver'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	new file:   1jgkoaow.k5m.txt
+#	modified:   Anarchy/Anarchy-csharp.sln
+#	modified:   Anarchy/Anarchy.sln
+#	modified:   Anarchy/Assembly-CSharp-vs.csproj
+#	modified:   Anarchy/Assembly-CSharp.csproj
+#	new file:   Anarchy/Assets/Map.asset
+#	new file:   Anarchy/Assets/Map.asset.meta
+#	new file:   Anarchy/Assets/Materials.meta
+#	new file:   Anarchy/Assets/Models.meta
+#	new file:   Anarchy/Assets/Models/Arch_Hotel.FBX
+#	new file:   Anarchy/Assets/Models/Arch_Hotel.FBX.meta
+#	new file:   Anarchy/Assets/Models/Materials.meta
+#	new file:   Anarchy/Assets/Models/Materials/No Name.mat
+#	new file:   Anarchy/Assets/Models/Materials/No Name.mat.meta
+#	new file:   Anarchy/Assets/Prefab.meta
+#	new file:   Anarchy/Assets/Prefab/Projectile.prefab
+#	new file:   Anarchy/Assets/Prefab/Projectile.prefab.meta
+#	modified:   Anarchy/Assets/Scripts.meta
+#	new file:   Anarchy/Assets/Scripts/Building.cs
+#	new file:   Anarchy/Assets/Scripts/Building.cs.meta
+#	new file:   Anarchy/Assets/Scripts/CameraController.cs
+#	new file:   Anarchy/Assets/Scripts/CameraController.cs.meta
+#	new file:   Anarchy/Assets/Scripts/Health.cs
+#	new file:   Anarchy/Assets/Scripts/Health.cs.meta
+#	modified:   Anarchy/Assets/Scripts/MobController.cs
+#	new file:   Anarchy/Assets/Scripts/ProjectileConrtoller.cs
+#	new file:   Anarchy/Assets/Scripts/ProjectileConrtoller.cs.meta
+#	modified:   Anarchy/ProjectSettings/InputManager.asset
+#	new file:   lxgmvbai.c40.txt
+#
+
