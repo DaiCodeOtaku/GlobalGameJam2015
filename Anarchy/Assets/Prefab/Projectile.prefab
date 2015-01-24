@@ -67,10 +67,14 @@ Rigidbody:
   m_GameObject: {fileID: 158594}
   serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Mass: .00999999978
 =======
   m_Mass: .00100000005
 >>>>>>> origin/Tristan
+=======
+  m_Mass: 1
+>>>>>>> parent of ad34d64... buildings import
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
