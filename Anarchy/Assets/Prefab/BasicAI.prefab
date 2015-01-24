@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 11458594, guid: 2351ad06897b0904d8bea67c6f541da9, type: 2}
-  fireDelay: 3
-  velocity: 50
-  layerMask: {}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!136 &13663892
 CapsuleCollider:
   m_ObjectHideFlags: 1
