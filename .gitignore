@@ -74,3 +74,7 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.sln
+Anarchy/Anarchy-csharp.sln
+*.sln
+*.sln
