@@ -24,7 +24,11 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 <<<<<<< HEAD
+<<<<<<< HEAD
 																GlobalSection(MonoDevelopProperties) = preSolution
+=======
+											GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> parent of ad34d64... buildings import
 =======
 											GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> parent of ad34d64... buildings import

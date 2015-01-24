@@ -68,10 +68,14 @@ Rigidbody:
   serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Mass: .00999999978
 =======
   m_Mass: .00100000005
 >>>>>>> origin/Tristan
+=======
+  m_Mass: 1
+>>>>>>> parent of ad34d64... buildings import
 =======
   m_Mass: 1
 >>>>>>> parent of ad34d64... buildings import
