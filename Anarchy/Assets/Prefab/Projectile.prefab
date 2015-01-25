@@ -8,11 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458594}
-  - 33: {fileID: 3358594}
   - 65: {fileID: 6558594}
-  - 23: {fileID: 2358594}
-  - 114: {fileID: 11458594}
   - 54: {fileID: 5417562}
+  - 114: {fileID: 11443924}
   m_Layer: 2
   m_Name: Projectile
   m_TagString: Projectle
@@ -28,37 +26,10 @@ Transform:
   m_GameObject: {fileID: 158594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2358594
-Renderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158594}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &3358594
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158594}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5417562
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -84,9 +55,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: .100000001, y: .100000001, z: .100000001}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11458594
+--- !u!114 &11443924
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -99,6 +70,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 0}
   owner: {fileID: 0}
+  meshes:
+  - {fileID: 100006, guid: bbd8a60fe6bfb374680dbcd2d121ecc4, type: 3}
+  - {fileID: 100006, guid: 8a0aaf5072ab6db4298992e3bf568999, type: 3}
+  - {fileID: 100006, guid: c3e9d4ba4da7a03448060f23d033a1bc, type: 3}
+  - {fileID: 100006, guid: f302db736a3c8c14e9e85d7db1ab4d57, type: 3}
+  - {fileID: 100006, guid: 7f6cf519fe0fae248af2ff44394eb5dc, type: 3}
+  - {fileID: 100006, guid: 414dad551582f9b4c90ec53a3d4f180f, type: 3}
+  - {fileID: 100006, guid: 64c97000b7a962b479e3c73446e86714, type: 3}
+  - {fileID: 100006, guid: 291d8b5585301e74eba94f24e5f88638, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

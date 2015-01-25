@@ -6,10 +6,14 @@ public class ProjectileConrtoller : MonoBehaviour {
 	public Vector3 Direction;
 	public GameObject owner;
 	private float timeToLive = 10;
+	public GameObject[] meshes;
 
 	// Use this for initialization
 	void Start () {
 		this.rigidbody.velocity = Direction;
+		GameObject obj = (GameObject)GameObject.Instantiate(meshes[(int)(Random.value * (float)meshes.Length)]);
+		obj.transform.position = transform.position;
+		obj.transform.parent = transform;
 	}
 	
 	// Update is called once per frame

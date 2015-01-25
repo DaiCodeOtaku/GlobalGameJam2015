@@ -6,6 +6,7 @@ public class MobController : MonoBehaviour {
 	public ProjectileConrtoller projectile;
 	private float fireDelay = 0;
 	public MobMember member;
+	public GameObject startPos;
 	// Use this for initialization
 	void Start () {
 
@@ -15,16 +16,18 @@ public class MobController : MonoBehaviour {
 	void Update () {
 		Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
 		direction.Normalize();
-		rigidbody.AddForce(direction * Time.deltaTime * 200);
-		direction  = new Vector3(Input.GetAxis("FireX"),0,Input.GetAxis("FireY")).normalized;
-		if(fireDelay < 0 && direction.magnitude > 0.0f ){
+		float scale =  Mathf.Clamp(Input.GetAxis("Squash"),-0.35f,-1.0f)*-1.0f;
+		rigidbody.AddForce(direction * Time.deltaTime * 200 * scale);
+		direction  = new Vector3(Input.GetAxis("FireX"),0,Input.GetAxis("FireY"));
+		if(fireDelay < 0 && direction.normalized.magnitude > 0.0f ){
 			ProjectileConrtoller PC = (ProjectileConrtoller)GameObject.Instantiate(projectile);
 			PC.owner = this.gameObject;
-			PC.Direction = direction*30.0f;
-			PC.Direction += rigidbody.velocity;
-			PC.transform.Translate(this.transform.position + (direction * ((BoxCollider)collider).size.x)+(Vector3.up*0.75f));
+			PC.Direction = direction.normalized*10.0f;
+			PC.Direction += rigidbody.velocity/2.0f;
+			PC.transform.position = this.transform.position+(Vector3.up*0.75f);
+			PC.transform.position += new Vector3(Mathf.Clamp(direction.normalized.x, -0.5f, 0.5f), 0,Mathf.Clamp(direction.normalized.z, -0.5f, 0.5f)) * (((BoxCollider)collider).size.x+0.2f);
 			PC.transform.LookAt(PC.transform.position + PC.Direction, Vector3.up);
-			fireDelay = 0.2f;
+			fireDelay = 0.1f;
 		}
 		fireDelay -= Time.deltaTime;
 		MobMember[] members;
@@ -36,6 +39,7 @@ public class MobController : MonoBehaviour {
 			{
 				MobMember mem = (MobMember)GameObject.Instantiate(member);
 				mem.transform.parent = transform;
+				mem.transform.position = startPos.transform.position;
 				change--;
 			}
 			while(change < 0)
@@ -48,11 +52,18 @@ public class MobController : MonoBehaviour {
 			}
 			members = gameObject.GetComponentsInChildren<MobMember>();
 			float radius = Mathf.Pow(members.Length,1/3.0f);
-			((BoxCollider)collider).size = new Vector3(radius, 0.9f, radius);
 			for(int i = 0; i < members.Length; i++)
 			{
 				members[i].targetPosition = new Vector3(Random.Range(-radius,radius),0,Random.Range(-radius,radius))/2.0f;
 			}
+		}
+		float rad = Mathf.Pow(members.Length,1/3.0f);
+		rad = Mathf.Lerp(((BoxCollider)collider).size.x, rad*scale,Time.deltaTime);
+		((BoxCollider)collider).size = new Vector3(rad, 0.9f, rad);
+		for(int i =0 ; i < members.Length; i++)
+		{
+			members[i].scale = scale;
+
 		}
 	}
 }

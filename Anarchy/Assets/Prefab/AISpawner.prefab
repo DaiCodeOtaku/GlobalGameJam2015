@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.4000015, y: 0, z: 86.8000031}
+  m_LocalPosition: {x: 61.6993408, y: 4.99908447, z: 32.1666336}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,9 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632236d7fe002b944b4808c0183335a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BAI: {fileID: 11463892, guid: 11b9be7de6ce94246921904e62e97a04, type: 2}
+  BAI: {fileID: 11495760, guid: 11b9be7de6ce94246921904e62e97a04, type: 2}
   AAI: {fileID: 11436994, guid: 95ef747b8acddb143b501454bb4be66f, type: 2}
-  baseSpawnRate: 1
+  baseSpawnRate: 10
   spawnRadius: 10
   advAISpawnModifier: 2
   basicAISpawnModifier: 4

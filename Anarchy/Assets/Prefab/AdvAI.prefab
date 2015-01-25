@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.0097656, y: 10, z: 35.61689}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5329660e81bdd249a30c008a6fd5811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 11458594, guid: 2351ad06897b0904d8bea67c6f541da9, type: 2}
+  projectile: {fileID: 11443924, guid: 2351ad06897b0904d8bea67c6f541da9, type: 2}
   fireDelay: 3
-  velocity: 50
+  velocity: 15
   burst: 3
   burstDelay: .100000001
 --- !u!136 &13636992

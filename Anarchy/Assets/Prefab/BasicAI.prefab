@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &144032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 444032}
+  - 33: {fileID: 3344034}
+  - 23: {fileID: 2344034}
+  m_Layer: 0
+  m_Name: Box018
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &163892
 GameObject:
   m_ObjectHideFlags: 0
@@ -8,12 +25,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 463892}
-  - 33: {fileID: 3363892}
-  - 136: {fileID: 13663892}
-  - 23: {fileID: 2363892}
-  - 54: {fileID: 5463892}
-  - 114: {fileID: 11463890}
-  - 114: {fileID: 11463892}
+  - 114: {fileID: 11495760}
+  - 114: {fileID: 11422772}
+  - 136: {fileID: 13639322}
+  - 54: {fileID: 5404388}
   m_Layer: 0
   m_Name: BasicAI
   m_TagString: Untagged
@@ -21,6 +36,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &444032
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144032}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+  m_LocalPosition: {x: -.000249233242, y: .0028540038, z: -.00246582017}
+  m_LocalScale: {x: 1, y: .439414352, z: 1}
+  m_Children: []
+  m_Father: {fileID: 463892}
+  m_RootOrder: 0
 --- !u!4 &463892
 Transform:
   m_ObjectHideFlags: 1
@@ -28,24 +55,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.4533958, y: 10, z: 28.6716614}
+  m_LocalPosition: {x: 60.6100006, y: 5.88000011, z: 36.6899986}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 444032}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2363892
+--- !u!23 &2344034
 Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 163892}
+  m_GameObject: {fileID: 144032}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e30d9ddbf50ea054a946e56a26d88b19, type: 2}
+  - {fileID: 2100000, guid: d59233c67322e6649b3bc8bb197ce65f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -53,14 +81,14 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3363892
+--- !u!33 &3344034
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 163892}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5463892
+  m_GameObject: {fileID: 144032}
+  m_Mesh: {fileID: 4300000, guid: a18b53772205c88428de1134022eb7d6, type: 3}
+--- !u!54 &5404388
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -68,14 +96,14 @@ Rigidbody:
   m_GameObject: {fileID: 163892}
   serializedVersion: 2
   m_Mass: .100000001
-  m_Drag: 3
+  m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &11463890
+--- !u!114 &11422772
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
---- !u!114 &11463892
+--- !u!114 &11495760
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -98,10 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ca4f554b029b64bb88487400df4807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 11458594, guid: 2351ad06897b0904d8bea67c6f541da9, type: 2}
-  fireDelay: 3
-  velocity: 50
---- !u!136 &13663892
+  projectile: {fileID: 11443924, guid: 2351ad06897b0904d8bea67c6f541da9, type: 2}
+  fireDelay: 2
+  velocity: 15
+--- !u!136 &13639322
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -110,10 +138,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
+  m_Radius: .400000006
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: .400000006, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

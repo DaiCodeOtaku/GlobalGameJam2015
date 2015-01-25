@@ -19,11 +19,13 @@ public class pauseCon : MonoBehaviour {
 		{
 			if(can.enabled == false){
 				can.enabled = true;
+				Time.timeScale = 0.0f;
 				return ;
 			}
 
 			if(can.enabled == true){
 				can.enabled = false;
+				Time.timeScale = 1.0f;
 				return ;
 			}
 

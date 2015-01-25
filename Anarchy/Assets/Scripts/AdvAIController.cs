@@ -8,7 +8,7 @@ public class AdvAIController : MonoBehaviour {
 	public float velocity = 50.0f;
 	public int burst = 3;
 	public float burstDelay = 0.1f;
-	int iterations = 17;
+	int iterations = 10;
 
 	float delay;
 	int burstAmount;
