@@ -20,7 +20,6 @@ public class BasicAIController : MonoBehaviour {
 		Vector3 mobVector = mob.transform.position - this.transform.position;
 		mobVector.y *= -1;
 		RaycastHit hit;
-		Debug.DrawRay(this.transform.position, mobVector);
 		if((Vector3.Magnitude(mob.transform.position - this.transform.position)) <= 15){
 			if (Physics.Raycast(this.transform.position, mobVector, out hit, Mathf.Infinity)){
 				if(hit.transform.gameObject.CompareTag("Mob")){

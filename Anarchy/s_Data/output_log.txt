@@ -14,18 +14,18 @@ Platform assembly: C:\Users\Alex\Documents\GlobalGameJam2015\Anarchy\s_Data\Mana
 Loading C:\Users\Alex\Documents\GlobalGameJam2015\Anarchy\s_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Alex\Documents\GlobalGameJam2015\Anarchy\s_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Alex\Documents\GlobalGameJam2015\Anarchy\s_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.161 seconds
+- Completed reload, in  0.095 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Alex\Documents\GlobalGameJam2015\Anarchy\s_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Alex\Documents\GlobalGameJam2015\Anarchy\s_Data\Managed\System.dll (this message is harmless)
 WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
-UnloadTime: 4.128972 ms
+UnloadTime: 5.011582 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 892.
-Total: 1.986898 ms (FindLiveObjects: 0.072661 ms CreateObjectMapping: 0.022988 ms MarkObjects: 0.380138 ms  DeleteObjects: 0.406411 ms)
+Total: 1.997982 ms (FindLiveObjects: 0.072250 ms CreateObjectMapping: 0.022578 ms MarkObjects: 0.389169 ms  DeleteObjects: 0.422010 ms)
 
 New mission created
  

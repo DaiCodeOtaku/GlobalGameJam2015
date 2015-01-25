@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\BasicAIController.cs" />
      <Compile Include="Assets\Scripts\Building.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\FlockOfSheep.cs" />
      <Compile Include="Assets\Scripts\GameOver.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\MenuControler.cs" />
@@ -58,6 +59,8 @@
      <Compile Include="Assets\Scripts\MobMember.cs" />
      <Compile Include="Assets\Scripts\Objective.cs" />
      <Compile Include="Assets\Scripts\ObjectiveController.cs" />
+     <Compile Include="Assets\Scripts\PigeonFlock.cs" />
+     <Compile Include="Assets\Scripts\PointerController.cs" />
      <Compile Include="Assets\Scripts\ProjectileConrtoller.cs" />
      <Compile Include="Assets\Scripts\ScoreUpdater.cs" />
      <Compile Include="Assets\Scripts\Speech.cs" />

@@ -13,7 +13,8 @@ public class Health : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(health <= 0){
-			Destroy(this.gameObject);
+			Destroy(this.gameObject); //oliver has changed this
+			//Time.timeScale = 0.0f;
 		}
 	}
 }
